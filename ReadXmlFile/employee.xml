@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<company>
+   <employee>
+        <name>Jane Austin</name>
+        <age>40</age>
+        <salary>$20000</salary>
+   </employee>
+   <employee>
+        <name>Rex Stout</name>
+        <age>50</age>
+        <salary>$40000</salary>
+   </employee>
+   <employee>
+        <name>Dashiell Hammett</name>
+        <age>20</age>
+        <salary>$80000</salary>
+   </employee>
+   <employee>
+        <name>Michael Miller</name>
+        <age>65</age>
+        <salary>$200000</salary>
+   </employee>
+</company>
