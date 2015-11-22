@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Web Page Sample</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" >
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="slider">
+				<img src="images/IMG_0001.JPG" id="1" />
+				<img src="images/IMG_0002.JPG" id="2" />
+			</div>
+			<a href="#" class="left" onclick="prev();">Previous</a>
+			<a href="#" class="right" onclick="next();">Next</a>
+			<div class='navigation'>
+				<div id="nav1" class="nav active" onclick="slideShow(1);"></div>
+				<div id="nav2" class="nav" onclick="slideShow(2);"></div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/ss.js"></script>
+	</body>
+</html>
