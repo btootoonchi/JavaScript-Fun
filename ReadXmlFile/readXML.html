@@ -4,54 +4,11 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="readXML.css" type="text/css">
 		<title>Reading XML File</title>
-		<script type="text/javascript">
-			function readXML() {
-				var xml = new XMLHttpRequest();
-				xml.open('GET', 'employee.xml', false);
-				xml.send();
-				
-				/*var xmlData = xml.responseText;
-				document.write(xmlData);*/
-				
-				var xmlData = xml.responseXML;
-				if (xmlData) {
-					xmlData = (new DOMParser()).parseFromString(xml.responseText, 'text/xml');
-					var emp = xmlData.getElementsByTagName('employee');
-					document.write("<table border='1'>");
-					document.write("<tr><td style='width: 100px; color: red;'>");
-					document.write("Row");
-					document.write("</td><td style='width: 100px; color: red;'>");
-					document.write("Name");
-					document.write("</td><td style='width: 100px; color: red;'>");
-					document.write("Age");
-					document.write("</td><td style='width: 100px; color: red;'>");
-					document.write("Salary");
-					document.write("</td></tr>");
-					for (var i = 0;i < emp.length; ++i) { 
-						var name = emp[i].getElementsByTagName('name')[0].firstChild.data;
-						var age = emp[i].getElementsByTagName('age')[0].firstChild.data;
-						var salary = emp[i].getElementsByTagName('salary')[0].firstChild.data;
-						
-						document.write("<tr><td>");
-						document.write(i+1);
-						document.write("</td><td>");
-						document.write(name);
-						document.write("</td><td>");
-						document.write(age);
-						document.write("</td><td>");
-						document.write(salary);
-						document.write("</td></tr>");
-					}
-						document.write("</table>");
-				} else {
-					alert("error");
-				}
-			}
-		</script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/xml.js"></script>
 	</head>
 	<body>
-		<span ID="blueBack">Read Employee File</span>
 		<h1>XML File</h1>
-		<button onClick="readXML()">Read XML File</button>
+		<span ID="blueBack">Read Employee File</span>
 	</body>
 </html>

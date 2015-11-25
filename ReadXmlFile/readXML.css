@@ -1,9 +1,10 @@
 body {
-   font-family:verdana;
-   color:#ff4d00;
-   font-size:14pt;
-   font-weight:bold;
-   background-color:#678395;
+/*   font-family:verdana;*/
+	font: 12px/18px "Lucida Grande","Lucida Sans Unicode", sans-serif; 
+	color:#0066cc;
+/*   font-size:14pt;
+   font-weight:bold;*/
+	background-color:#ffe699;
 }
-div {background-color:#c1d4cc;}
+
 #blueBack {background-color:#c1d4cc}
