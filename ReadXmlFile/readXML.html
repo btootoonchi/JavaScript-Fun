@@ -5,10 +5,36 @@
 		<link rel="stylesheet" href="readXML.css" type="text/css">
 		<title>Reading XML File</title>
 		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/xml.js"></script>
+		<script type="text/javascript" src="js/readXml.js"></script>
 	</head>
 	<body>
 		<h1>XML File</h1>
 		<span ID="blueBack">Read Employee File</span>
+		<div id="employee_list"></div>
+		
+		<form id="employee-form">
+			<div class="item text">
+				<label>Name:</label>
+				<div class="field"><input type="text" name="name" id="name"/></div>
+			</div>
+			<div class="item text">
+				<label>Age:</label>
+				<div class="field"><input type="text" name="age" id="age"/></div>
+			</div>
+			<div class="item text">
+				<label>Salary:</label>
+				<div class="field"><input type="text" name="salary" id="salary"/></div>
+			</div>
+			<div class="button-wrapper">
+				<div class="item button">
+					<div class="field"><input type="button" id="employee-op-discard" value="Discard" /></div>
+				</div>
+				<div class="item button button-default">
+					<div class="field"><input type="submit" id="employee-op-save" value="Save" onclick="update_employee()"/></div>
+				</div>
+				<div><p>Output: <span id="txtOutput"></span></p></div>
+			</div>
+			<input type="hidden" name="id_entry" value="0" />
+		</form>
 	</body>
 </html>
