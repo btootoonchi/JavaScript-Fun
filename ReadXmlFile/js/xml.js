@@ -70,16 +70,12 @@ function render_edit_box(index, employee){
 function update_employee() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
-		//alert("function readyState: "+xhttp.readyState+", status: "+xhttp.status);
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			//clearTimeout(xhttpTimeout);   // Looks like we didn't time out!
-			//alert(xhttp.responseText);
 			document.getElementById("txtOutput").innerHTML = xhttp.responseText;
 		}
 	}
 
-	//alert("php/xml.php?n="+document.getElementById("name").value+"&a="+document.getElementById("age").value+"&s="+document.getElementById("salary").value);
-	//alert("php/xml.php?id="+employee[0]+"&n="+document.getElementById("name").value+"&a="+document.getElementById("age").value+"&s="+document.getElementById("salary").value);
 	xhttp.open("GET","php/xml.php?id="+employee[0]+"&n="+document.getElementById("name").value+"&a="+document.getElementById("age").value+"&s="+document.getElementById("salary").value,true);
 	
 	// Timeout to abort in 5 seconds
