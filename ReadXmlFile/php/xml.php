@@ -37,16 +37,24 @@
 	$e->item($id)->getElementsByTagName('salary')->item(0)->nodeValue = $salary;
 	header("Content-type: text/xml");
 	
+	// Add new data
+	$root = $xmlDoc->lastChild;
 	$emp = $xmlDoc->createElement( "employee" );
-	$n = $xmlDoc->createElement( "name" );
-	$n->appendChild( $xmlDoc->createTextNode($name));
-	$emp->appendChild( $n );
-	$a = $xmlDoc->createElement( "age" );
-	$a->appendChild( $xmlDoc->createTextNode($age));
-	$emp->appendChild( $a );
-	$s = $xmlDoc->createElement( "salary" );
-	$s->appendChild( $xmlDoc->createTextNode($salary));
-	$emp->appendChild( $s );
+	//$xmlDoc->appendChild( $emp );
+	$root->appendChild( $emp );
+	
+	$nameElement = $xmlDoc->createElement( "name" );
+	$emp->appendChild( $nameElement );
+	$nameElement->appendChild($xmlDoc->createTextNode($name));
+	
+	$ageElement = $xmlDoc->createElement( "age" );
+	$emp->appendChild( $ageElement );
+	$ageElement->appendChild( $xmlDoc->createTextNode($age));
+	
+	$salaryElement = $xmlDoc->createElement( "salary" );
+	$emp->appendChild( $salaryElement );
+	$salaryElement->appendChild( $xmlDoc->createTextNode($salary));
+	
 	echo $xmlDoc->saveXML();
 	$xmlDoc->save("../employee.xml");
 ?>
