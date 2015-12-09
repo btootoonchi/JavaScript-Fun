@@ -55,6 +55,13 @@
 	$emp->appendChild( $salaryElement );
 	$salaryElement->appendChild( $xmlDoc->createTextNode($salary));
 	
+	// Remove an employee
+	$emp = $xmlDoc->documentElement;
+
+	// we retrieve the chapter and remove it from the book
+	$employee = $emp->getElementsByTagName('employee')->item($id);
+	$oldEmployee = $emp->removeChild($employee);
+	
 	echo $xmlDoc->saveXML();
 	$xmlDoc->save("../employee.xml");
 ?>
