@@ -43,6 +43,8 @@ function readXML() {
 			htmlWrite += salary;
 			htmlWrite += "</td><td>";
 			htmlWrite += "<button index="+ i +" class='edit'>Edit</button>";
+			htmlWrite += "</td><td>";
+			htmlWrite += "<button index="+ i +" class='delete'>Delete</button>";
 			htmlWrite += "</td></tr>";
 		}
 		htmlWrite += "</table>";
@@ -59,6 +61,11 @@ function readXML() {
 		employee.push(emp[$(this).attr("index")].getElementsByTagName('salary')[0].firstChild.data);
 		render_edit_box($(this).attr("index"), employee);
     });
+	
+	$('.delete').click(function() {
+		console.log('clicked to delete existing'); 
+		remove_employee($(this).attr("index"));
+	});
 }
 
 function render_edit_box(index, employee){
@@ -87,4 +94,17 @@ function update_employee() {
 		// server that things failed, using the same xhttp object.
 	}*/
 	xhttp.send(null);
+}
+
+function remove_employee(id) {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			document.getElementById("txtOutput").innerHTML = xhttp.responseText;
+			window.location.reload();
+		}
+	}
+
+	xhttp.open("GET","php/xml.php?id="+id,true);
+	xhttp.send();
 }
